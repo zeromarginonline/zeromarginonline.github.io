@@ -396,17 +396,64 @@
       box-shadow: 0 0 35px rgba(234, 179, 8, 0.8), 0 0 20px rgba(34, 197, 94, 0.5);
     }
 
-    /* Hero & Phone Layout */
+    /* FRONT PAGE BANNER (Page 1) */
+    .front-page-banner-wrap {
+      position: relative;
+      width: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1.5px solid rgba(234, 179, 8, 0.45);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 40px rgba(234, 179, 8, 0.2);
+      margin-top: 15px;
+      margin-bottom: 30px;
+      background: #000;
+    }
+    .front-page-banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+    .banner-hotspot-funded {
+      position: absolute;
+      top: 70%;
+      left: 51.5%;
+      width: 15.5%;
+      height: 6%;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 999px;
+    }
+    .banner-hotspot-deposit {
+      position: absolute;
+      top: 70%;
+      left: 68%;
+      width: 13.5%;
+      height: 6%;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 999px;
+    }
+
+    /* SECOND PAGE: TERMINAL & IPHONE SECTION */
+    .second-page-terminal-section {
+      margin-top: 70px;
+      background: radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.08) 0%, rgba(6, 18, 12, 0.92) 80%);
+      border: 1px solid #143826;
+      border-radius: 32px;
+      padding: 50px 40px;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85);
+    }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 50px;
       align-items: center;
-      margin-top: 20px;
     }
     @media(max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .second-page-terminal-section { padding: 30px 20px; }
     }
     .tag-badge-gold {
       display: inline-flex;
@@ -424,15 +471,15 @@
       margin-bottom: 20px;
     }
     .hero-title {
-      font-size: 48px;
+      font-size: 44px;
       font-weight: 900;
-      line-height: 1.1;
+      line-height: 1.15;
       text-transform: uppercase;
       letter-spacing: -1px;
       margin-bottom: 20px;
     }
     .hero-title .brand-large-gold {
-      font-size: 58px;
+      font-size: 52px;
       background: linear-gradient(135deg, #facc15 0%, #ca8a04 40%, #ffffff 85%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -482,10 +529,10 @@
     }
     .iphone-device {
       position: relative;
-      width: 340px;
-      height: 680px;
+      width: 320px;
+      height: 650px;
       background: #0d0f17;
-      border-radius: 56px;
+      border-radius: 54px;
       padding: 10px;
       box-shadow: 0 0 0 1px #eab308, 0 0 0 3px #854d0e, 0 30px 70px -15px rgba(0, 0, 0, 0.95);
       overflow: hidden;
@@ -495,7 +542,7 @@
       width: 100%;
       height: 100%;
       background: #000000;
-      border-radius: 46px;
+      border-radius: 44px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -545,7 +592,7 @@
       width: 100%;
       height: 100%;
       padding-top: 48px;
-      border-radius: 46px;
+      border-radius: 44px;
       overflow: hidden;
     }
 
@@ -1284,9 +1331,8 @@
 </head>
 <body>
 
-  <!-- ================= DOCKABLE SMART AI SUPPORT BUBBLE & MODAL ================= -->
+  <!-- DOCKABLE SMART AI SUPPORT BUBBLE & MODAL -->
   <div id="ai-chat-dock">
-    <!-- Pop-up Mini Assistant Card -->
     <div class="ai-chat-card-popup" id="aiSupportCard">
       <div class="popup-header">
         <div style="display: flex; align-items: center; gap: 8px;">
@@ -1325,7 +1371,6 @@
       </div>
     </div>
 
-    <!-- The WhatsApp Open Account (AI Support) Bubble as Requested -->
     <div class="chat-bubble-btn" onclick="toggleAiPopup()">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Support" style="width: 24px; height: 24px;" />
       <span style="font-weight: 900; font-size: 13px;">Open Account (AI Support)</span>
@@ -1340,7 +1385,7 @@
     <div class="candle-wick-bottom"></div>
   </div>
 
-  <!-- Intro Screen Loader with Animated "ZERO MARGIN ONLINE" -->
+  <!-- Intro Screen Loader -->
   <div id="loader-overlay">
     <div class="intro-brand-box">
       <img src="logo.png" alt="Zero Margin Online Logo" class="intro-logo-image" />
@@ -1385,7 +1430,7 @@
     </div>
   </div>
 
-  <!-- ================= 100% AUTO-RUNNING REAL-TIME TICKER TAPE (INDIAN STOCKS + FOREX + COMMODITIES + CRYPTO) ================= -->
+  <!-- Real-Time Ticker Tape -->
   <div class="live-running-tape-wrapper">
     <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
@@ -1419,15 +1464,16 @@
     </div>
   </div>
 
-  <!-- Header Navigation with Logo Image & Funded Account Direct Action -->
+  <!-- Header Navigation -->
   <header class="header-nav">
     <nav class="nav-box">
       <div class="logo-container">
-        <img src="/logo.png" alt="Zero Margin Online Logo" class="logo-img-nav" />
+        <img src="logo.png" alt="Zero Margin Online Logo" class="logo-img-nav" />
         <div class="logo-text-brand">ZERO MARGIN <span class="gold-accent">ONLINE</span></div>
       </div>
 
       <div class="nav-links">
+        <a href="#page-2-terminal">Terminal</a>
         <a href="#about-platform">About</a>
         <a href="#compare">Compare</a>
         <span onclick="openFundedWhatsApp('General')" class="nav-highlight-funded">Funded Account</span>
@@ -1450,67 +1496,78 @@
 
   <main class="container">
     
-    <!-- Hero Section -->
-    <div class="hero-grid motion-box" id="terminal">
-      <div>
-        <div class="tag-badge-gold">
-          <span>●</span> LEARN • ANALYZE • TRADE • GROW
-        </div>
-        
-        <h1 class="hero-title">
-          WELCOME TO
-          <span class="brand-large-gold">ZERO MARGIN ONLINE</span>
-        </h1>
+    <!-- ================= PAGE 1 (FRONT PAGE): PHOTO BANNER ================= -->
+    <div class="front-page-banner-wrap motion-box" id="page-1-front">
+      <img src="zero margin front page photo.png" alt="Zero Margin Online Front Page" class="front-page-banner-img" />
 
-        <p class="hero-sub">
-          India's institutional multi-asset terminal. Master Bull &amp; Bear market swings with instant order-flow analytics, global commodity breakouts, and Zero-Brokerage execution.
-        </p>
-
-        <div class="pillars-grid">
-          <div class="pillar-pill" style="color: #4ade80;"><span>📖</span> LEARN</div>
-          <div class="pillar-pill" style="color: #facc15;"><span>🔍</span> ANALYZE</div>
-          <div class="pillar-pill" style="color: #f87171;"><span>📊</span> TRADE</div>
-          <div class="pillar-pill" style="color: #34d399;"><span>📈</span> GROW</div>
-        </div>
-
-        <div class="btn-group" style="display: flex; gap: 14px; flex-wrap: wrap;">
-          <div onclick="openFundedWhatsApp('General')" class="btn-border-beam-gold">
-            <div class="btn-border-beam-inner-gold">
-              <span>OPEN FUNDED ACCOUNT</span>
-              <span>→</span>
-            </div>
-          </div>
-          <button onclick="document.getElementById('deposit-upi').scrollIntoView({behavior: 'smooth'})" class="btn-gold-solid">
-            Scan &amp; Deposit UPI
-          </button>
-        </div>
-
-        <div style="margin-top: 14px; font-size: 12px; color: #94a3b8; font-family: monospace;">
-          * WhatsApp Support &amp; Direct Assistance: <strong>+91 89320 67548</strong>
-        </div>
-      </div>
-
-      <!-- iPhone Frame Container -->
-      <div class="iphone-wrapper">
-        <div class="iphone-float-container" data-tilt data-tilt-max="10">
-          <div class="iphone-device">
-            <div class="iphone-dynamic-island">
-              <div class="island-camera"></div>
-              <div class="island-sensor"></div>
-            </div>
-
-            <div class="iphone-screen">
-              <div class="iphone-status-bar">
-                <span>9:41</span>
-                <span style="color:#22c55e;">5G 100%</span>
-              </div>
-              <div id="tv_chart_container"></div>
-              <div class="iphone-bottom-bar"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Clickable Hotspot Actions directly over the image buttons -->
+      <a href="javascript:void(0)" onclick="openFundedWhatsApp('Front Page Banner')" class="banner-hotspot-funded" title="Open Funded Account"></a>
+      <a href="#deposit-upi" class="banner-hotspot-deposit" title="Scan & Deposit UPI"></a>
     </div>
+
+    <!-- ================= PAGE 2: TERMINAL HERO + IPHONE FRAME ================= -->
+    <section class="second-page-terminal-section motion-box" id="page-2-terminal">
+      <div class="hero-grid">
+        <div>
+          <div class="tag-badge-gold">
+            <span>●</span> LEARN • ANALYZE • TRADE • GROW
+          </div>
+          
+          <h1 class="hero-title">
+            WELCOME TO
+            <span class="brand-large-gold">ZERO MARGIN ONLINE</span>
+          </h1>
+
+          <p class="hero-sub">
+            India's institutional multi-asset terminal. Master Bull &amp; Bear market swings with instant order-flow analytics, global commodity breakouts, and Zero-Brokerage execution.
+          </p>
+
+          <div class="pillars-grid">
+            <div class="pillar-pill" style="color: #4ade80;"><span>📖</span> LEARN</div>
+            <div class="pillar-pill" style="color: #facc15;"><span>🔍</span> ANALYZE</div>
+            <div class="pillar-pill" style="color: #f87171;"><span>📊</span> TRADE</div>
+            <div class="pillar-pill" style="color: #34d399;"><span>📈</span> GROW</div>
+          </div>
+
+          <div class="btn-group" style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <div onclick="openFundedWhatsApp('General')" class="btn-border-beam-gold">
+              <div class="btn-border-beam-inner-gold">
+                <span>OPEN FUNDED ACCOUNT</span>
+                <span>→</span>
+              </div>
+            </div>
+            <button onclick="document.getElementById('deposit-upi').scrollIntoView({behavior: 'smooth'})" class="btn-gold-solid">
+              Scan &amp; Deposit UPI
+            </button>
+          </div>
+
+          <div style="margin-top: 14px; font-size: 12px; color: #94a3b8; font-family: monospace;">
+            * WhatsApp Support &amp; Direct Assistance: <strong>+91 89320 67548</strong>
+          </div>
+        </div>
+
+        <!-- iPhone Frame Container -->
+        <div class="iphone-wrapper">
+          <div class="iphone-float-container" data-tilt data-tilt-max="10">
+            <div class="iphone-device">
+              <div class="iphone-dynamic-island">
+                <div class="island-camera"></div>
+                <div class="island-sensor"></div>
+              </div>
+
+              <div class="iphone-screen">
+                <div class="iphone-status-bar">
+                  <span>9:41</span>
+                  <span style="color:#22c55e;">5G 100%</span>
+                </div>
+                <div id="tv_chart_container"></div>
+                <div class="iphone-bottom-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Floating Numeric Metrics -->
     <div class="motion-stats-wrapper motion-box">
@@ -1532,7 +1589,7 @@
       </div>
     </div>
 
-    <!-- ================= DUAL-MARKET FUNDED ACCOUNT SECTION ================= -->
+    <!-- Dual-Market Funded Account Section -->
     <section class="funded-section motion-box" id="funded-account">
       <div class="section-badge-green">INSTANT CAPITAL ALLOCATION</div>
       <h2 style="font-size: 42px; font-weight: 900; line-height: 1.2; margin-top: 10px;">
@@ -1542,7 +1599,6 @@
         Trade with our proprietary capital with Zero Personal Risk. Choose between high-leverage <strong>Indian Markets (NSE/BSE &amp; F&amp;O)</strong> or <strong>Global Multi-Asset (Crypto, Forex &amp; Commodities)</strong> and keep up to 90% profits.
       </p>
 
-      <!-- Market Toggle Tabs -->
       <div class="funded-tab-switch">
         <button id="tab-indian-btn" class="funded-tab-btn active" onclick="switchFundedMarket('indian')">
           🇮🇳 Indian Markets (NSE / F&amp;O)
@@ -1681,7 +1737,7 @@
       </div>
     </section>
 
-    <!-- ================= PROFESSIONAL UPI QR DEPOSIT CARD ================= -->
+    <!-- Professional UPI QR Deposit Section -->
     <section class="upi-payment-section motion-box" id="deposit-upi">
       <div style="text-align: center;">
         <div class="section-badge-green">INSTANT UPI DEPOSIT GATEWAY</div>
@@ -1738,7 +1794,7 @@
       </div>
     </section>
 
-    <!-- Section 1: Build Your Market Access -->
+    <!-- About Platform -->
     <section class="about-platform-grid motion-box" id="about-platform">
       <div>
         <div class="section-badge-green">ABOUT THE PLATFORM</div>
@@ -1784,7 +1840,7 @@
       </div>
     </section>
 
-    <!-- Section 2: Compare Zero Margin Online Section -->
+    <!-- Compare Section -->
     <section class="compare-container motion-box" id="compare">
       <div class="section-badge-green">WHY TRADERS SWITCH</div>
       <h2 style="font-size: 42px; font-weight: 900; line-height: 1.2;">
@@ -1835,7 +1891,7 @@
       </p>
     </section>
 
-    <!-- Section 3: Markets Available on Zero Margin Online -->
+    <!-- Markets Available Section -->
     <section class="markets-available-section motion-box" id="markets-available">
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
         <span style="font-size: 24px; color: #22c55e;">🛡️</span>
@@ -1886,7 +1942,7 @@
       </button>
     </section>
 
-    <!-- Section 4: Understand Margin & Leverage -->
+    <!-- Margin & Leverage Section -->
     <section class="margin-leverage-section motion-box">
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
         <span style="font-size: 24px; color: #22c55e;">🛡️</span>
@@ -1914,7 +1970,7 @@
       </p>
     </section>
 
-    <!-- Section 5: Platform Roadmap -->
+    <!-- Platform Roadmap -->
     <section class="roadmap-section motion-box" id="roadmap">
       <div class="section-badge-green">BUILT FOR TRADERS</div>
       <h2 style="font-size: 42px; font-weight: 900;">
@@ -1963,7 +2019,7 @@
       </div>
     </section>
 
-    <!-- Section 6: Frequently Asked Questions -->
+    <!-- FAQ Section -->
     <section class="faq-section motion-box" id="faq">
       <div>
         <div class="section-badge-green" style="margin-bottom: 8px;">GOOD TO KNOW</div>
@@ -2041,7 +2097,7 @@
       </div>
     </section>
 
-    <!-- Section 7: Start Your Trading Journey CTA Banner -->
+    <!-- CTA Banner Section -->
     <section class="cta-banner-section motion-box">
       <h2 style="font-size: 44px; font-weight: 900; letter-spacing: -0.5px;">
         Now Start Your <span style="color: #22c55e;">Trading Journey</span>
@@ -2061,7 +2117,7 @@
       </div>
     </section>
 
-    <!-- Section 8: Live News Wire -->
+    <!-- Live News Wire -->
     <div id="live-news" style="margin-top: 110px;" class="motion-box">
       <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
         <div>
@@ -2104,7 +2160,7 @@
       </div>
     </div>
 
-    <!-- Section 9: Global Screener -->
+    <!-- Global Screener -->
     <div id="global-market" style="margin-top: 100px;" class="motion-box">
       <div class="section-badge-green">CROSS-ASSET SCANNER</div>
       <h2 style="font-size: 36px; font-weight: 900; margin-top: 10px;">GLOBAL MARKETS &amp; COMMODITIES HEATMAP</h2>
@@ -2175,7 +2231,7 @@
       <div class="footer-col">
         <h4>Useful Links</h4>
         <ul class="footer-links">
-          <li><a href="#terminal"><span>›</span> Blogs</a></li>
+          <li><a href="#page-2-terminal"><span>›</span> Terminal</a></li>
           <li><a href="#about-platform"><span>›</span> About us</a></li>
           <li><a href="javascript:void(0)" onclick="openFundedWhatsApp('General')"><span>›</span> Funded Accounts</a></li>
           <li><a href="#deposit-upi"><span>›</span> Instant UPI Deposit</a></li>
@@ -2279,7 +2335,7 @@
       window.open(url, '_blank');
     }
 
-    // Direct General WhatsApp Redirect (+91 89320 67548)
+    // Direct General WhatsApp Redirect
     function redirectToWhatsApp() {
       const phoneNumber = "918932067548";
       const message = encodeURIComponent("hi sir regarding to open Demat account with Zero Margin Online");
@@ -2450,7 +2506,7 @@
     }
     renderCuratedNews('all');
 
-    // Chart Loader
+    // Chart Loader inside iPhone Screen
     function loadTradingView(symbolName, defaultInterval = '15') {
       document.getElementById('tv_chart_container').innerHTML = '';
       new TradingView.widget({
